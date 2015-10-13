@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Save The Date M&V</title>
+  <link href="site.css" rel="stylesheet">
+  <link rel="stylesheet" href="Countdown/compiled/flipclock.css">
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="Countdown/compiled/flipclock.js"></script>	
+</head>
+
+<body>
+
+  <nav id="nav01"></nav>
+		
+  <div id="main">
+  <h1>Welcome to Our Company</h1> 
+  <h2>Web Site Main Ingredients</h2>
+
+	<p>Pages (HTML)</p>
+	<p>Style Sheets (CSS)</p>
+	<p>Computer Code (JavaScript)</p>
+	<p>Live Data (Files and Databases)</p>
+
+	<div class="clock" style="margin:2em;"><noscript>Fin de l'évènement le 10 septembre 2016.</noscript></div>
+		<script type="text/javascript">
+			var clock;
+
+			$(document).ready(function() {
+
+				// Grab the current date
+				var currentDate = new Date();
+
+				// Set some date in the future. In this case, it's always Jan 1
+				var futureDate  = new Date("Sep 10 15:00:00 2016");
+
+				// Calculate the difference in seconds between the future and current date
+				var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+
+				// Instantiate a coutdown FlipClock
+				clock = $('.clock').FlipClock(diff, {
+					clockFace: 'DailyCounter',
+					countdown: true
+				});
+			});
+		</script>
+		
+  <footer id="foot01"></footer>
+  </div>
+  
+<script src="script.js"></script>
+
+</body>
+</html>
